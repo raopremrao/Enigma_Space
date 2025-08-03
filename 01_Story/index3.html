@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoryForge - AI Story Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with blur effect -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">
+                    <i class="fas fa-book-open"></i>
+                    StoryForge
+                </h1>
+                <p class="tagline">Crafting Personalized Stories with AI</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Form Steps -->
+            <div class="form-container">
+                <!-- Step 1: Age Input -->
+                <div class="form-step active" id="step-1">
+                    <div class="step-content">
+                        <h2>Enter Your Age</h2>
+                        <p>Tell us your age for personalized story content</p>
+                        <div class="age-input-container">
+                            <div class="input-wrapper">
+                                <i class="fas fa-birthday-cake"></i>
+                                <input type="number" id="age-input" placeholder="Enter your age" min="1" max="120">
+                            </div>
+                            <button class="btn-continue" id="age-continue" disabled>
+                                <i class="fas fa-arrow-right"></i> Continue
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Gender Selection -->
+                <div class="form-step" id="step-2">
+                    <div class="step-content">
+                        <h2>Select Gender</h2>
+                        <p>Choose gender for story personalization</p>
+                        <div class="gender-options">
+                            <div class="option-card" data-value="male">
+                                <i class="fas fa-mars"></i>
+                                <h3>Male</h3>
+                            </div>
+                            <div class="option-card" data-value="female">
+                                <i class="fas fa-venus"></i>
+                                <h3>Female</h3>
+                            </div>
+                            <div class="option-card" data-value="other">
+                                <i class="fas fa-genderless"></i>
+                                <h3>Other</h3>
+                            </div>
+                        </div>
+                        <button class="btn-back" id="back-step2">
+                            <i class="fas fa-arrow-left"></i> Back
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Theme Selection -->
+                <div class="form-step" id="step-3">
+                    <div class="step-content">
+                        <h2>Choose Story Theme</h2>
+                        <p>Select the genre for your personalized story</p>
+                        <div class="theme-options">
+                            <div class="theme-card" data-value="horror">
+                                <i class="fas fa-ghost"></i>
+                                <h3>Horror</h3>
+                                <p>Spine-chilling tales</p>
+                            </div>
+                            <div class="theme-card" data-value="adventure">
+                                <i class="fas fa-mountain"></i>
+                                <h3>Adventure</h3>
+                                <p>Epic journeys</p>
+                            </div>
+                            <div class="theme-card" data-value="romance">
+                                <i class="fas fa-heart"></i>
+                                <h3>Romance</h3>
+                                <p>Love stories</p>
+                            </div>
+                            <div class="theme-card" data-value="mystery">
+                                <i class="fas fa-search"></i>
+                                <h3>Mystery</h3>
+                                <p>Puzzling cases</p>
+                            </div>
+                            <div class="theme-card" data-value="fantasy">
+                                <i class="fas fa-magic"></i>
+                                <h3>Fantasy</h3>
+                                <p>Magical worlds</p>
+                            </div>
+                            <div class="theme-card" data-value="scifi">
+                                <i class="fas fa-rocket"></i>
+                                <h3>Sci-Fi</h3>
+                                <p>Future worlds</p>
+                            </div>
+                        </div>
+                        <div class="theme-actions">
+                            <button class="btn-back" id="back-step3">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button class="btn-generate" id="generate-story-btn" style="display: none;">
+                                <i class="fas fa-magic"></i> Generate Story
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Story Display -->
+                <div class="form-step" id="step-4">
+                    <div class="step-content">
+                        <div class="loading-container" id="loading">
+                            <div class="spinner"></div>
+                            <h2>Crafting Your Story...</h2>
+                            <p>Our AI is creating a personalized story just for you</p>
+                        </div>
+                        
+                        <div class="story-container" id="story-result" style="display: none;">
+                            <h2>Your Space Based Personalized Story</h2>
+                            <div class="story-content" id="story-text"></div>
+                            
+                            <div class="story-actions">
+                                <button class="btn-primary" id="generate-new">
+                                    <i class="fas fa-refresh"></i> Generate New Story
+                                </button>
+                                <button class="btn-secondary" id="start-over">
+                                    <i class="fas fa-home"></i> Start Over
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <button class="btn-back" id="back-step4">
+                            <i class="fas fa-arrow-left"></i> Back
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
