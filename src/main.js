@@ -1,4 +1,3 @@
-import './style.css'
 
 // Global variables to store user selections
 let userSelections = {
